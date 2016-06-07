@@ -1,4 +1,14 @@
 <resources>
-    <string name="app_name">android-court-counter-app</string>
+    <string name="app_name">Court Counter</string>
     <string name="action_settings">Settings</string>
+
+    <string name="team1_name">Androids</string>
+    <string name="team2_name">Cyber Cats</string>
+
+    <string name="score_start">0</string>
+    <string name="reset">Reset</string>
+
+    <string name="points_1">+1</string>
+    <string name="points_2">+2</string>
+    <string name="points_3">+3</string>
 </resources>
