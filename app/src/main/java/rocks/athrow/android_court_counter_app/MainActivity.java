@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences mPrefs;
+    TextView team1Score;
+    TextView team2Score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Set scores from shared preferences if they exist to handle rotations and coming back
         // to the app from a pause
-        if ( team1Score != null ){ team1Score.setText(team1ScoreString);}
-        if ( team2Score != null ){ team2Score.setText(team2ScoreString);}
+        if (team1Score != null) {
+            team1Score.setText(team1ScoreString);
+        }
+        if (team2Score != null) {
+            team2Score.setText(team2ScoreString);
+        }
 
         Button team1Score1 = (Button) this.findViewById(R.id.team_1_points1);
         Button team1Score2 = (Button) this.findViewById(R.id.team_1_points2);
@@ -121,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
     public void updateScore(int team, int points) {
         SharedPreferences.Editor ed = mPrefs.edit();
         if (team == 1) {
-            TextView team1Score = (TextView) this.findViewById(R.id.team_1_score);
+            team1Score = (TextView) this.findViewById(R.id.team_1_score);
             if (team1Score != null) {
                 int team1CurrentScore = Integer.parseInt(team1Score.getText().toString());
                 int newScore = team1CurrentScore + points;
@@ -130,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 ed.putString("team1_score", newScoreString);
             }
         } else if (team == 2) {
-            TextView team2Score = (TextView) this.findViewById(R.id.team_2_score);
+            team2Score = (TextView) this.findViewById(R.id.team_2_score);
             if (team2Score != null) {
                 int team2CurrentScore = Integer.parseInt(team2Score.getText().toString());
                 int newScore = team2CurrentScore + points;
